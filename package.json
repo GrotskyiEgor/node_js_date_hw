@@ -1,0 +1,16 @@
+{
+  "name": "jshw",
+  "version": "1.0.0",
+  "description": "test",
+  "license": "ISC",
+  "author": "me",
+  "type": "commonjs",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "moment": "^2.30.1"
+  }
+}
