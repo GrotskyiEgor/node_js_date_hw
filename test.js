@@ -25,11 +25,9 @@ function isWeekend(){
 
     if (weekday === 6 || weekday === 7) {
         console.log("Today is a weekend")
-        return true
     }
 
     console.log("Today is a weekday")
-    return false
 }
 
 function getDaysUntilNewYear(){
