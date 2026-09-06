@@ -1,29 +1,29 @@
-console.log("hi node")
+import moment from "moment"
 
-const moment = require("moment")
+const my_moment = moment()
 
 const yearDaysCount = 365
 
 function getCurrentDay(){
-    console.log(moment().format('dddd'))
+    console.log(my_moment.format('dddd'))
 }
 
 function getCurrentMonth(){
-    console.log(moment().format("MMMM"))
+    console.log(my_moment.format("MMMM"))
 }
 
 function getCurrentYear(){
-    console.log(moment().year())
+    console.log(my_moment.year())
 }
 
 function getCurrentDate(){
-    console.log(moment().format("dddd, MMMM D, YYYY"))
+    console.log(my_moment.format("dddd, MMMM D, YYYY"))
 }
 
 function isWeekend(){
-    const weekday = Number(moment().format("d"))
+    const weekday = Number(my_moment.format("d"))
 
-    if (weekday === 6 || weekday === 7) {
+    if (weekday === 6 || weekday === 0) {
         console.log("Today is a weekend")
     }
 
@@ -31,16 +31,16 @@ function isWeekend(){
 }
 
 function getDaysUntilNewYear(){
-    const currentDay = moment().dayOfYear()
+    const currentDay = my_moment.dayOfYear()
 
     console.log(yearDaysCount - currentDay, " days until New Year")
 }
 
 function getAge(date){
     const birthDate = moment(date)
-    let age = moment().year() - birthDate.year()
+    let age = my_moment.year() - birthDate.year()
 
-    if (birthDate.month() > moment().month() || (birthDate.month() === moment().month() && birthDate.date() > moment().date())){
+    if (birthDate.month() > my_moment.month() || (birthDate.month() === my_moment.month() && birthDate.date() > my_moment.date())){
         age--
     }
 
@@ -49,7 +49,7 @@ function getAge(date){
 
 function getDaysUntilBirthday(date){
     const birth = moment(date)
-    const today = moment()
+    const today = my_moment
 
     const nextBirthday = moment({ year: today.year(), month: birth.month(), date: birth.date() })
 
