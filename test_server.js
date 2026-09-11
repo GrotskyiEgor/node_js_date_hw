@@ -11,6 +11,12 @@ app.get('/timestamp' , (req, res) => {
     })
 })
 
+app.get('/currentday', (req, res) => {
+    res.status(200).json({
+        current_day: moment().format("DDDD")    
+    })
+})
+
 app.listen(PORT, HOST, () => {
-    console.log("Start server")
+    console.log(`Start server ${HOST}:${PORT}`)
 })
