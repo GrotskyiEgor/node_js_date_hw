@@ -64,9 +64,13 @@ app.get('/health', (req, res) => {
 
 app.get('/products', (req, res) => {
     const {take, category} = req.query
-    const takeNum = Number(take)
 
-    let resultProductsArray = products
+    if (!take && !category) {
+        return res.status(200).json(products)
+    }
+
+    const takeNum = Number(take)
+    const resultProductsArray = [...products]
 
     if (category) {
         resultProductsArray = resultProductsArray.filter(product => product.category == category)
